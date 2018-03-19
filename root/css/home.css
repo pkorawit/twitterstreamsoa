@@ -1,0 +1,100 @@
+@keyframes pop {
+    0% {
+      -ms-transform: scale(1);
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+    50% {
+      -ms-transform: scale(1.2);
+      -webkit-transform: scale(1.2);
+      transform: scale(1.2);
+    }
+    90% {
+      -ms-transform: scale(0.9); 
+      -webkit-transform: scale(0.9);
+      transform: scale(0.9);
+    }
+    100% {
+      -ms-transform: scale(1);
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+  }
+  @keyframes pulse {
+    50% {
+      -ms-transform: scale(1.2);
+      -webkit-transform: scale(1.2);
+      transform: scale(1.2);
+      opacity: 1;
+    }
+    70% {
+      -ms-transform: scale(0.9);
+      -webkit-transform: scale(0.9);
+      transform: scale(0.9);
+      opacity: 1;
+    }
+    100% {
+      -ms-transform: scale(1);
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  .twitter {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 158px;
+    height: 158px;
+    text-align: center;
+  }
+  .twitter:hover #icon-twitter {
+    fill: #fff;
+    
+  }
+  .twitter:hover span {
+    color: #fff;
+  }
+  .twitter:hover #icon-twitter, .twitter:hover span {
+    transform: translateY(-5px);
+    
+  }
+  .twitter:hover:before {
+    animation: pop 0.5s;
+    animation-fill-mode: forwards;
+  }
+  .twitter:hover:after {
+    animation: pulse 0.5s;
+    animation-fill-mode: forwards;
+  }
+  .twitter:before, .twitter:after {
+    content: "";
+    top: 15;
+    left: 0;
+    width: 158px;
+    height: 158px;
+    position: absolute;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 100%;
+  }
+  .twitter:after {
+    background-color: rgb(15, 187, 255);
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  .twitter svg, .twitter span {
+    z-index: 1;
+  }
+  .twitter #icon-twitter {
+    transition: 0.5s;
+
+  }
+  .twitter span {
+    transition: 0.5s;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  

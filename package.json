@@ -1,0 +1,20 @@
+{
+  "name": "SoA",
+  "version": "1.0.0",
+  "description": "",
+  "main": "steam.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "node steam.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2",
+    "node-fetch": "^2.1.1",
+    "node-tweet-stream": "^2.0.3",
+    "socket.io": "^2.0.4",
+    "socket.io-client": "^2.0.4"
+  }
+}

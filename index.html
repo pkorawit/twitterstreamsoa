@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Steaming Tweet</title>
+    <!-- Favicon -->
+    <link href="./root/favicon.ico" rel="shortcut icon">
+    <!-- Google Fonts-->
+    <link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=PT+Sans" type="text/css" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Roboto:400,300" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--Boostrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!--Font Awesome-->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="/root/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/root/css/home.css">
+    <!--JS-->
+    <script src="/root/js/index.js"></script>
+</head>
+
+<body style='height:100%;width:100%;background-image: url("./root/img/twitter-icon-blue-bg.png");min-height: 100%;'>
+    <div class="container">
+        <div class="box1">
+            <b>
+                <font color="white" style="font-size:100px;" id="live">LIVE</font>
+            </b>
+            <font color="white" style="font-size:80px;">STEAMING </font>
+            <i class="fas fa-rss" style="font-size:120px;color:rgb(255, 0, 0);"></i>
+        </div>
+        <div class="box2">
+            <b>
+                <font color="white" style="font-size:80px;" id="twit">Twitter</font>
+            </b>
+        </div>
+        <div class="box3">
+            <div id="main">
+                <h5 id="topic">LIVE STEAMING TWITTER</h5>
+                <h6 id="text">&nbsp;&nbsp;&nbsp;&nbsp; "SteamingTwitter" เป็นเวปไซต์ ที่ใช้ในการสอดส่องหรือสำรวจวิเคราะห์ วัดความรู้สึกของผู้ใช้งานบน
+                    Twitter ว่า มีความรู้สึกนึกคิดอย่างไรโดยมีข้อความของเหล่าผู้ใช้งานสื่อออนไลน์อย่าง Twiter และมีข้อความรวมถึงแฮชเเท็คฮิตต่างๆ
+                    แสดงตลอดเวลาแบบ "Realtime" "เริ่มต้น Steaming ไปกับพวกเราได้ที่นี่" </h6>
+                <h5 id="topic">GOAL OF THIS WEBSITE</h5>
+                <h6 id="text">&nbsp;&nbsp;&nbsp;&nbsp; เป้าหมายของเวปไซต์นี่ เพื่อให้ผู้ที่เข้ามาใช้งานได้สังเกตุว่า ผู้ใช้งานสื่อออนไลน์เหล่านั่นส่วนมากมีพฤติกรรม
+                    ความรู้สึกนึกคิดไปทางด้านบวก หรือลบ ต่อข้อความนั่นอย่างไร รวมถึงเป็นสื่อสำหรับผู้ที่ชื่นชอบติดตามข่าวสารทันเหตุการณ์ต่างๆ</h6>
+                <a href="index2" id="button_home">
+                    <i class="twitter" style="margin-left:23%;">
+                        <svg id="twit_bird" width="94px" height="154px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+                                <g id="icon-twitter" sketch:type="MSArtboardGroup" fill="#FFFFFF">
+                                    <path d="M51.1176471,17 C53.2247178,16.325 54.8511941,14.255 55.5294118,12.5 C53.6396796,12.995 51.4429935,13.88 49.6470588,14 C47.2324367,12.29 44.5685558,11 42.2941176,11 C35.9501175,11 31.356519,15.755 32,21.5 C31.356519,22.43 31.4508285,23.24 32,24.5 C23.0993587,23.57 15.5386379,19.355 9.94117647,12.5 C9.59858971,14.51 9.09367111,16.325 8.47058824,18.5 C9.09367111,21.95 10.9000609,25.19 14.3529412,27.5 C11.9766403,27.05 10.3922405,26.57 8.47058824,26 C9.00661617,31.04 12.5424973,35.33 17.2941176,36.5 C16.3743652,36.545 15.467543,36.665 14.3529412,36.5 C13.8744378,36.665 13.2316822,36.605 12.8823529,36.5 C13.9121616,40.7 17.700502,43.76 21.7058824,44 C18.6755173,46.685 14.2545776,48.38 9.94117647,48.5 C8.61777081,48.38 7.79945446,48.335 7,48.5 C11.5370129,51.245 16.9300659,53 23.1764706,53 C41.5956298,53 51.9130902,36.845 52.5882353,23 C51.9130902,22.37 51.898581,21.92 52.5882353,21.5 C53.8877862,19.97 55.625983,18.095 57,15.5 C55.1631409,16.82 53.1826412,17.39 51.1176471,17 Z"></path>
+                                </g>
+                            </g>
+                        </svg>
+                        <span>Get Started</span>
+                    </i>
+                </a>
+            </div>
+            <div id="contact">
+                <h5 id="topic">Contact Details</h5>
+                <h6 id="contact_body">Natchaya Kaewrunkam </h6>
+                <h6 id="contact_body2">ID : 5830213006 </h6>
+                <a id="fb1">
+                    <i class="fab fa-facebook-square" style="display:inline;" id="facebok"></i>
+                    <b style="display:none;color:white;" id="fbPin">Natchaya&nbsp;Kaeewrunkam</b>   
+                </a>
+                <h6 id="contact_body">Nachat Songrasree </h6>
+                <h6 id="contact_body2">ID : 5830213007 </h6>
+                <a id="fb2">
+                    <i class="fab fa-facebook-square" id="fb"></i>
+                    <b style="display:none;color:white;" id="fbMai">Mai&nbsp;Prince-Exiled</b>   
+                </a>
+                <h6 id="contact_body">Sirom Wongwiriyakit </h6>
+                <h6 id="contact_body2">ID : 5830213028 </h6>
+                <a id="fb3">
+                    <i class="fab fa-facebook-square" id="fb"></i>
+                    <b style="display:none;color:white;" id="fbEarth">Sirom&nbsp;Wongwiriyakit</b>   
+                </a>
+                <h6 id="contact_body">Waroot Suwanopard </h6>
+                <h6 id="contact_body2">ID : 5830213029</h6>
+                <a id="fb4">
+                    <i class="fab fa-facebook-square" id="fb"></i>
+                    <b style="display:none;color:white;" id="fbJeaw">Waroot&nbsp;Suwanopard</b>   
+                </a>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

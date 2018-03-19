@@ -1,0 +1,43 @@
+$(document).ready(function () {
+    //Pin
+    $("#fb1").mouseenter(function(){
+        $("#fbPin").show(500);
+    });
+    $("#fb1").mouseleave(function(){
+        $("#fbPin").hide(500);
+    });
+    $("#fb1").click(function(){
+        window.open('https://goo.gl/jqGhLJ');
+    });
+    //Mai
+    $("#fb2").mouseenter(function(){
+        $("#fbMai").show(500);
+    });
+    $("#fb2").mouseleave(function(){
+        $("#fbMai").hide(500);
+    });
+    $("#fb2").click(function(){
+        window.open('https://goo.gl/xxPJub');
+    });
+    //Earth
+    $("#fb3").mouseenter(function(){
+        $("#fbEarth").show(500);
+    });
+    $("#fb3").mouseleave(function(){
+        $("#fbEarth").hide(500);
+    });
+    $("#fb3").click(function(){
+        window.open('https://goo.gl/YZB3xe');
+    });
+    //Jeaw
+    $("#fb4").mouseenter(function(){
+        $("#fbJeaw").show(500);
+    });
+    $("#fb4").mouseleave(function(){
+        $("#fbJeaw").hide(500);
+    });
+    $("#fb4").click(function(){
+        window.open('https://goo.gl/jN4edR');
+    });
+});
+     

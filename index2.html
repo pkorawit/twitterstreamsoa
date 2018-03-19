@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Steaming Tweet</title>
+    <!-- Favicon -->
+    <link href="/root/favicon.ico" rel="shortcut icon">
+    <!-- Google Fonts-->
+    <link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=PT+Sans" type="text/css" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Roboto:400,300" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--Boostrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!--Font Awesome-->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="\root\css\index.css">
+    <link rel="stylesheet" type="text/css" href="\root\css\home.css">
+</head>
+
+<body style='height:100%;width:100%;background-image: url("./root/img/sample_bg.jpg");min-height: 100%;'>
+    <div class="container">
+        <div class="box1">
+            <font color="white">
+                <h2>
+                    <img src="/root/img/Screenshot_7.png" alt="">
+                    <b style="font-size:60px;">STEAMING TWEETS</b>
+                </h2>
+            </font>
+        </div>
+        <div class="main_box">
+            <div>
+                <button id="success" type="button" class="btn btn-success" style="font-size:30px;font-weight:bold;opacity:1;color:white;" disabled>0.00 %</button>
+                <div id="po" style="height:100%;width:100%;"></div>
+            </div>
+            <div>
+                <button id="warning" type="button" class="btn btn-warning" style="font-size:30px;font-weight:bold;opacity:1;color:white;" disabled>0.00 %</button>
+                <div id="neu" style="height:100%;width:100%;"></div>
+            </div>
+            <div>
+                <button id="danger" type="button" class="btn btn-danger" style="font-size:30px;font-weight:bold;opacity:1;color:white;" disabled>0.00 %</button>
+                <div id="neg" style="height:100%;width:100%;"></div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+    <script>
+        var btn_positive = 0;
+        var btn_neutral = 0;
+        var btn_negative = 0;
+        var positive = 0;
+        var neutral = 0;
+        var negative = 0;
+        var socket = io();
+        socket.on('tweet', function (tweet) {
+            var text = tweet.text;
+            var urlAPI = 'https://api.dandelion.eu/datatxt/sent/v1/?lang=en&text=' + text + '&token=fe56f96bb89a4eb3a3832245a626e215'
+            $.ajax({
+                url: urlAPI,
+                type: "GET",
+                success: function (data) {
+                    console.log(data.sentiment.type);
+                    if (data.sentiment.type == "neutral") {
+                        neutral++;
+                        $("#neu").prepend('<div id="message" style="margin-left: 5%;"><p style="color:#0080ff;"><i class="fab fa-twitter-square"></i>&nbsp;&nbsp;'+tweet.user.name+'</p>'+tweet.text+'</div>');
+                    } else if (data.sentiment   .type == "positive") {
+                        positive++;
+                        $("#po").prepend('<div id="message" style="margin-left: 5%;"><p style="color:#0080ff;"><i class="fab fa-twitter-square"></i>&nbsp;&nbsp;'+tweet.user.name+'</p>'+tweet.text+'</div>');
+                    } else if (data.sentiment.type == "negative") {
+                        negative++;
+                        $("#neg").prepend('<div id="message" style="margin-left: 5%;"><p style="color:#0080ff;"><i class="fab fa-twitter-square"></i>&nbsp;&nbsp;'+tweet.user.name+'</p>'+tweet.text+'</div>');
+                    }
+                }
+            });
+            btn_neutral = (neutral / (positive + neutral + negative)) * 100;
+            btn_positive = (positive / (positive + neutral + negative)) * 100;
+            btn_negative = (negative / (positive + neutral + negative)) * 100;
+            $("#success").text(btn_positive.toFixed(2) + " %");
+            $("#warning").text(btn_neutral.toFixed(2) + " %");
+            $("#danger").text(btn_negative.toFixed(2) + " %");
+        });
+    </script>
+</body>
+
+</html>
